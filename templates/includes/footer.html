@@ -1,0 +1,46 @@
+<roundcube:if condition="!env:framed || env:extwin" />
+</div>
+<roundcube:if condition="config:support_url" />
+<a href="<roundcube:var name='config:support_url' />" target="_blank" id="supportlink" class="hidden"><roundcube:label name="support" /></a>
+<roundcube:endif />
+<roundcube:endif />
+
+<roundcube:object name="message" id="messagestack" />
+
+<roundcube:include file="includes/cmdline.html" />
+
+<script src="/deps/bootstrap.bundle.min.js"></script>
+<script src="/ui.js"></script>
+
+<link rel="stylesheet" href="/styles/vim.css">
+<link rel="stylesheet" href="/styles/vim-dark.css" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="/styles/cmdline.css">
+
+<script src="/js/isTyping.js"></script>
+<script src="/js/cmdLine.js"></script>
+<script src="/js/folder.js"></script>
+
+<roundcube:if condition="env:task == 'mail' && env:action == 'compose'">
+  <!-- CodeMirror CDN -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <!-- (optional theme) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/neo.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <!-- pick the mode(s) you want -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <!-- Vim keymap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/keymap/vim.min.js"></script>
+
+
+  <!-- your initializer -->
+  <script src="skins/iusevimbtw/js/compose.js"></script>
+</roundcube:if>
+
+</body>
+</html>

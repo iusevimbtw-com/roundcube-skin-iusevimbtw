@@ -1,0 +1,75 @@
+:root{--vim-bg:#faf8f5;--vim-panel:#f2efe9;--vim-panel-weak:#f6f3ee;--vim-text:#1f2328;--vim-muted:#5b6069;--vim-primary:#6b8cff;--vim-border:#e3dfd7;--vim-hover:#eae6de;--vim-star:#b7791f;}
+html,body{background:var(--vim-bg);color:var(--vim-text)}#layout,#layout>.content,.content{background:var(--vim-bg)!important}
+#layout-menu,#layout-list,#layout-sidebar,#layout-content,.toolbar,.menu{background:var(--vim-panel)}
+.sidebar,.boxfooter,.boxtitle,.toolbar,.searchbar,.contentbox{border-color:var(--vim-border)!important}
+.toolbar a.button{border-radius:.5rem;border:1px solid var(--vim-border);background:var(--vim-panel-weak)}
+.toolbar a.button:hover{background:var(--vim-hover)}
+#folderlist li.selected>a,#mailboxlist li.selected>a{background:color-mix(in srgb,var(--vim-primary) 12%,white);border-radius:.4rem}
+#folderlist a:hover,#mailboxlist a:hover{background:var(--vim-hover);border-radius:.4rem}
+#messagelist tbody tr{height:2.25rem}#messagelist tbody tr.unread>td{font-weight:600}
+#messagelist tbody tr:hover>td{background:var(--vim-hover)!important}
+.flag .flagged,.col-flag .flagged{color:var(--vim-star)}
+.vimkeys-statusline{border:1px solid var(--vim-border);background:var(--vim-panel-weak);color:var(--vim-muted)}
+.vimkeys-cmdline{border:1px solid var(--vim-border)}
+
+/* Compose CodeMirror full-height like Elastic's textarea */
+.rcmcompose #composebody.cm-enabled { display: none; }
+.rcmcompose .cm-s-default {
+  height: calc(100vh - 230px);
+  border: 1px solid var(--layout-border, #e5e7eb);
+  border-radius: .5rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  font-size: 13px;
+}
+.rcmcompose .cm-dialog { z-index: 10000; }
+
+
+/* Statusline */
+.vimkeys-statusline{
+  margin-top: .25rem;
+  padding: .25rem .5rem;
+  border: 1px solid var(--layout-border, #e5e7eb);
+  border-radius: .375rem;
+  font-size: 12px;
+  color: #374151;
+  background: #f9fafb;
+}
+.vimkeys-statusline[data-mode="insert"]{ background:#ecfeff; }
+.vimkeys-statusline[data-mode="visual"], .vimkeys-statusline[data-mode="visualblock"], .vimkeys-statusline[data-mode="visualLine"]{ background:#fef3c7; }
+.vimkeys-statusline[data-mode="replace"]{ background:#fee2e2; }
+
+.vimkeys-focus-block {
+  border: 1px solid #a1bed0;
+}
+
+.vim-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.CodeMirror {
+  background: #1e1e1e !important;
+  color: #ddd !important;
+}
+
+.CodeMirror-linenumber {
+  color: grey !important;
+}
+
+/* default: hidden when blurred (CodeMirror default) */
+.CodeMirror div.CodeMirror-cursors { visibility: hidden; }
+.CodeMirror.CodeMirror-focused div.CodeMirror-cursors { visibility: visible; }
+
+/* when our class is present, force ghost cursor visible */
+.cm-ghost div.CodeMirror-cursors { visibility: visible !important; }
+.cm-ghost:not(.CodeMirror-focused) .CodeMirror-cursor {
+  animation: none !important;
+  opacity: 0.45;
+  border-left: 2px solid #fff !important;
+  background: none !important;
+}
+.cm-ghost:not(.CodeMirror-focused).cm-fat-cursor .CodeMirror-cursor {
+  width: 0.6em !important;
+  border: 0 !important;
+  background: rgba(255,255,255,0.35) !important;
+}

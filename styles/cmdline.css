@@ -1,0 +1,56 @@
+/* Bottom ex-command line */
+#vim-cmdline {
+  width: 100%;
+  height: 40px;
+  background: #0b1020;
+  color: #e5e7e9;
+  border-top: 1px solid rgba(229,231,235,.6);
+  box-shadow: 0 -8px 18px rgba(0,0,0,.2);
+  font: 7px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+@media (min-width: 1024px) {
+  #layout {
+    height: calc(100% - 40px);
+  }
+
+  .special-buttons {
+    bottom: 40px !important;
+  }
+}
+
+@media (max-with: 1023px) {
+  #vim-cmdline {
+    display: none;
+  }
+}
+
+#vim-cmdline .inner {
+  font-size: 3em;
+  margin: 0 auto;
+  padding: .4rem .75rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+#vim-cmdline .inner#vim-cmdline-error {
+  color: red;
+  font-style: italic;
+}
+
+#vim-cmdline .prefix {
+  color: #7aa2f7;
+  user-select: none;
+}
+
+#vim-cmdline input.cmd {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+

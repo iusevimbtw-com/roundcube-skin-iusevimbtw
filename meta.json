@@ -1,0 +1,8 @@
+{
+  "name": "iusevimbtw",
+  "extends": "elastic",
+  "author": "iusevimbtw",
+  "license": "MIT",
+  "version": "1.0.0",
+  "localization": true
+}
