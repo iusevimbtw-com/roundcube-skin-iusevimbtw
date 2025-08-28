@@ -224,7 +224,7 @@ class VimCommandsComposeView {
           return true;
         }
         if (!this._isValidEmail(arg)) {
-          throw new Error(`E518 Email address is invalid`);
+          throw new Error(`E518: Email address is invalid`);
         }
         var rep = cmd.endsWith('!');
         this._setEmailHeader('_to', arg, rep);
@@ -237,7 +237,7 @@ class VimCommandsComposeView {
           return true;
         }
         if (!this._isValidEmail(arg)) {
-          throw new Error(`E518 Email address is invalid`);
+          throw new Error(`E518: Email address is invalid`);
         }
         var repc = cmd.endsWith('!');
         this._setEmailHeader('_cc', arg, repc);
@@ -250,7 +250,7 @@ class VimCommandsComposeView {
           return true;
         }
         if (!this._isValidEmail(arg)) {
-          throw new Error(`E518 Email address is invalid`);
+          throw new Error(`E518: Email address is invalid`);
         }
         var repb = cmd.endsWith('!');
         this._setEmailHeader('_bcc', arg, repb);
