@@ -73,3 +73,82 @@ html,body{background:var(--vim-bg);color:var(--vim-text)}#layout,#layout>.conten
   border: 0 !important;
   background: rgba(255,255,255,0.35) !important;
 }
+
+#vim-help {
+  position: absolute;
+  width: 95vw;
+  height: calc(100vh - 60px);
+  z-index: 9000;
+  bottom: 45px;
+  left: 3vh;
+  background-color: var(--vim-panel-weak);
+  border: 0.5vh solid var(--vim-border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Courier New", monospace;
+  font-size: 15px;
+  padding: 20px;
+	box-sizing: border-box;
+}
+
+#vim-help:focus, #vim-help *:focus {
+	outline: none;
+}
+
+.vim-help-filename {
+    color: var(--vim-cian);
+}
+
+.vim-help-iusevim {
+  margin-left: 40px;
+}
+
+.vim-help-header {
+  width: 100%;
+  padding-left: 15em;
+  display: block;
+}
+
+.vim-help-content {
+  max-width: 47em;
+  text-wrap: wrap;
+}
+
+.vim-help-content table,
+.vim-help-content thead,
+.vim-help-content tbody,
+.vim-help-content tfoot,
+.vim-help-content tr,
+.vim-help-content th,
+.vim-help-content td {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-collapse: inherit;
+  border-spacing: 0;
+  border-color: inherit;
+  vertical-align: inherit;
+  text-align: left;
+  font-weight: inherit;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+
+.vim-help-content td {
+  padding: 3px 10px;
+}
+
+.vim-help-content td.vim-help-q {
+  text-align: right;
+  width: 13em;
+}
+
+.vim-help-content td.vim-help-a {
+  text-align: left;
+}
+
+#vim-help-container {
+  overflow-y: auto;
+  position: relative;
+  height: 100%;
+}

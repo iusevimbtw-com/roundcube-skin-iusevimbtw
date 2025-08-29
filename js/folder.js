@@ -4,6 +4,10 @@ class VimCommandsMailListView {
     this.rc = window.rcmail;
     this.cmdLine = window.vimCmdLine;
 
+    if (!['mail', 'folder'].includes(this.rc.env.task) || this.rc.env.action !== '') {
+      return;
+    }
+
     this.focusOn = 'message_list'; // message_list || folder_list
 
     this.keybuf = [];
@@ -15,20 +19,27 @@ class VimCommandsMailListView {
 
     this.lastSelectedUid = null;
 
-    this.cfg = (this.rc.env.vimkeys_cfg || window.vimkeys_cfg || {});
-    this.enabled = this.cfg.enabled !== false; // default true
-
     this.rc.addEventListener('init', () => {
-      const action = this.rc.env.action;
-      if (!this.enabled) {
-        return;
+      document.addEventListener('keydown', this._onKeyDown.bind(this));
+    });
+    this.rc.addEventListener('listupdate', () => {
+      this._toggleFocus('message_list');
+    });
+    this.cmdLine.registerCommandsParser((line) => {
+      if (this.cmdLine.isHelpOpened()) {
+        return false;
       }
-      if ((this.rc.task === 'mail' || this.rc.task === 'folder') && (action === '')) {
-        document.addEventListener('keydown', this._onKeyDown.bind(this));
+
+      if (line === 'q') {
+        this.cmdLine.showMessage('Are you sure you want to logout? if yes - use q!');
+        return true;
+      }
+
+      if (['q!', 'wq', 'x', 'qa!'].includes(line.toLowerCase())) {
+        this.rc.command('logout');
+        return true;
       }
     });
-
-    this.cmdLine.registerGlobalCommandsParser(this._globalCMDParser.bind(this));
   }
 
   _toggleFocus(forceFocus = null) {
@@ -120,6 +131,7 @@ class VimCommandsMailListView {
   }
 
   _selectRow(cmd, jumpCount = 1) {
+    console.log('select_row');
     if (this.focusOn === 'message_list') {
       this._selectRowOnMessageList(cmd, jumpCount);
       return;
@@ -176,27 +188,6 @@ class VimCommandsMailListView {
     }
 
     return false;
-  }
-
-  _globalCMDParser(cmd) {
-    const openFolderRegEx = /^(e) (.*?)$/;
-
-    if (openFolderRegEx.test(cmd)) {
-      let [,,folder] = cmd.match(openFolderRegEx);
-      if (folder.toLowerCase().includes('@')) {
-      
-        if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(folder.toLowerCase())) {
-          this.rc.command('compose', folder);
-          return true;
-        }
-
-        throw new Error(`E486: email not valid: ${folder}`);
-      }
-      folder = String(folder).charAt(0).toUpperCase() + String(folder.toLowerCase()).slice(1);
-      if (folder.toLowerCase() === 'inbox') folder = 'INBOX';
-      this._fastSwitchFolder(folder);
-      return true;
-    }
   }
 
   _parseKeyCombo(regex, str) {
@@ -353,6 +344,9 @@ class VimCommandsMailListView {
   }
 
   _onKeyDown(e) {
+    if (this.cmdLine.isHelpOpened()) {
+      return;
+    }
     if (window.isTyping(e)) {
       return;
     }

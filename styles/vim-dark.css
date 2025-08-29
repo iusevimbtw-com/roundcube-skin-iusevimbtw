@@ -1,4 +1,4 @@
-:root{--vim-bg:#101112;--vim-panel:#151718;--vim-panel-weak:#191c1e;--vim-text:#e6e7e9;--vim-muted:#9aa0a6;--vim-primary:#7aa2f7;--vim-border:#2a2e32;--vim-hover:#1e2123;--vim-star:#d9ae52}
+:root{--vim-bg:#101112;--vim-panel:#101112;--vim-panel-weak:#191c1e;--vim-text:#e6e7e9;--vim-muted:#9aa0a6;--vim-primary:#7aa2f7;--vim-border:#2a2e32;--vim-hover:#1e2123;--vim-star:#d9ae52;--vim-cian:#52caf0}
 html,body{background:var(--vim-bg);color:var(--vim-text)}#layout,#layout>.content,.content{background:var(--vim-bg)!important}
 #layout-menu,#layout-list,#layout-sidebar,#layout-content,.toolbar,.menu{background:var(--vim-panel)}
 .sidebar,.boxfooter,.boxtitle,.toolbar,.searchbar,.contentbox{border-color:var(--vim-border)!important}
