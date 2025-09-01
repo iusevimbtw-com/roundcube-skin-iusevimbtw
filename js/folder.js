@@ -265,7 +265,7 @@ class VimCommandsMailListView {
       return true;
     }
 
-    if (k === 'V') {
+    if (k === 'V' || k === 'v') {
       e.preventDefault();
       this._switchToVisualMode();
       return true;

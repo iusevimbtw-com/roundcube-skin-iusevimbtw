@@ -17,7 +17,6 @@
 		<span class="vim-help-header">Webmail - help</span>
 		<br />
 		<div class="vim-help-content">
-      The :iusevimbtw Webmail is powered by Roundcube and it's Elastic skin which is upgraded with vim motions for your convinience.
 
 			<table>
 				<tr>
@@ -29,6 +28,209 @@
 					<td class="vim-help-a">Use ":q<Enter>".</td>
 				</tr>
 			</table>
+
+      <br />
+
+      iusevimbtw stands for "I'am a better developer than you". iusevimbtw webmail powered by Rouncube and Elastic skin. Havely upgraded by our team to provide keystrokes you all know.
+
+      <br />
+      <br />
+
+      ============================================================================
+      <br />
+      <span class="vim-help-filename">IUSEVIMBTW WEBMAIL DOCUMENTATION</span>
+
+      <br />
+      <br />
+      ----------------------------------------------------------------------------
+      <span id="vim-help-anchor-compose" class="vim-help-filename">MESSAGE LIST VIEW</span>
+      <br />
+      <br />
+      This view supports normal (Esc), Ex (:), visual (Shift+v|v), and search mode (/).
+      <br />
+      <br />
+      in Ex-mode:
+      <br />
+      <table>
+        <tr>
+          <td class="vim-help-a">:e &lt;folder name&gt;</td>
+					<td class="vim-help-a">Open folder.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:e &lt;email&gt;</td>
+					<td class="vim-help-a">Compose new email.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:(q|q!|wq|x|qa!)</td>
+					<td class="vim-help-a">Logout.</td>
+        </tr>
+      </table>
+      <br />
+      In nomal mode:
+      <br />
+      <table>
+        <tr>
+          <td class="vim-help-a">gi</td>
+					<td class="vim-help-a">Navigate to Inbox.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">gd</td>
+					<td class="vim-help-a">Navigate to Drafts.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">gs</td>
+					<td class="vim-help-a">Navigate to Sent.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">gj</td>
+					<td class="vim-help-a">Navigate to Spam.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">gt</td>
+					<td class="vim-help-a">Navigate to Deleted Items.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">j</td>
+					<td class="vim-help-a">Select next item.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">k</td>
+					<td class="vim-help-a">Select previoius item.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">gg</td>
+					<td class="vim-help-a">select first item.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">G</td>
+					<td class="vim-help-a">select last item.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">&lt;C-d&gt;</td>
+					<td class="vim-help-a">Jump half page down.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">&lt;C-u&gt;</td>
+					<td class="vim-help-a">Jump half page up.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">&lt;C-w&gt;(h|l)</td>
+					<td class="vim-help-a">Switch focus between email list and folder list.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">Shift + V</td>
+					<td class="vim-help-a">Start visual mode.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">dd</td>
+					<td class="vim-help-a">Move selected message(s) to Deleted items folder.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">D</td>
+					<td class="vim-help-a">Purge selected message(s).</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">u</td>
+					<td class="vim-help-a">Mark selected message(s) read.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">U</td>
+					<td class="vim-help-a">Mark selected message(s) unread.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">r</td>
+					<td class="vim-help-a">Reply on selected message.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">R</td>
+					<td class="vim-help-a">Reply-all on selected message.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">f</td>
+					<td class="vim-help-a">Forward selected message.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">/</td>
+					<td class="vim-help-a">Start search.</td>
+        </tr>
+      </table>
+
+      <br />
+      <br />
+      ----------------------------------------------------------------------------
+      <span id="vim-help-anchor-compose" class="vim-help-filename">COMPOSE VIEW</span>
+      <br />
+      <br />
+      Enter insert-mode (i) to start typing a message. Exist to normal mode to navigate with Vim-motions. Press ":" to start Ex-mode. Use visual, visual line and visual block mode while composing the message.
+      <br />
+      <br />
+      In Ex-mode:
+      <br />
+      <table>
+        <tr>
+          <td class="vim-help-a">:w</td>
+					<td class="vim-help-a">Save draft.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:(x|wq|wq!|x!)</td>
+					<td class="vim-help-a">Send message and switch to inbox folder.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:q</td>
+					<td class="vim-help-a">Switch to mail list.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:to &lt;email address&gt;</td>
+					<td class="vim-help-a">Append email to "to" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:to! &lt;email address&gt;</td>
+					<td class="vim-help-a">Set "to" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:cc &lt;email address&gt;</td>
+					<td class="vim-help-a">Append email to "cc" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:cc! &lt;email address&gt;</td>
+					<td class="vim-help-a">Set "cc" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:bcc &lt;email address&gt;</td>
+					<td class="vim-help-a">Append email to "bcc" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:bcc! &lt;email address&gt;</td>
+					<td class="vim-help-a">Set "bcc" field.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:subj &lt;textg&gt;</td>
+					<td class="vim-help-a">Append to "subject".</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:subj! &lt;textg&gt;</td>
+					<td class="vim-help-a">Set "subject".</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:set (nu|number)</td>
+					<td class="vim-help-a">Show line numbers.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:set (rnu|relativenumber)</td>
+					<td class="vim-help-a">Show relative line numbers.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:set (nonu|nonumber)</td>
+					<td class="vim-help-a">Hide line numbers.</td>
+        </tr>
+        <tr>
+          <td class="vim-help-a">:set (nornu|norelativenumber)</td>
+					<td class="vim-help-a">Hide relative line numbers.</td>
+        </tr>
+      </table>
+      <br />
+      Normal (Esc), Insert (i), Visual (v|shift+v|cntr+v) modes are the same-ish as in your Vim.
+
 
 		</div>
 	</div>

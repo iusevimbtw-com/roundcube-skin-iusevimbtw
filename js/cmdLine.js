@@ -88,7 +88,7 @@ class CMDLine {
         }
         const direction = match[2] === 'j' ? 1 : -1;
         const times = parseInt(match[1], 10);
-        let top = this.helpLineHeight*direction*times;
+        let top = this.helpLineHeight * direction * times;
         this.helpContainer.scrollBy({ top, behavior: 'smooth' });
         this.keybuf.length = 0;
         return true;
@@ -178,6 +178,9 @@ class CMDLine {
           return true;
       }
     });
+
+    // TODO: remove
+    this._openHelp();
   }
 
   _feedKey(key) {
@@ -209,8 +212,8 @@ class CMDLine {
   _openHelp() {
     this.helpOpened = true;
     document.getElementById('vim-help').classList.remove('hidden');
-    this.helpContainer.focus();
     this.helpLineHeight = this.getLineHeight(this.helpContainer);
+    this.helpContainer.focus();
   }
 
   _closeHelp() {

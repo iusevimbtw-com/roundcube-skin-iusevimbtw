@@ -56,7 +56,12 @@ class VimCommandsComposeView {
       this._fixHeight();
     });
 
-    this.cm.on('keydown', function(_, e) { e.stopPropagation(); });
+    this.cm.on('keydown', (_, e) => {
+      if (this.cmdLine.isHelpOpened()) {
+        return;
+      }
+      e.stopPropagation();
+    });
 
     this.cm.on('vim-mode-change', this._changeMode.bind(this));
     this._changeMode();
@@ -311,28 +316,6 @@ class VimCommandsComposeView {
           return true;
         }
         throw new Error('Usage: :set [no]number | [no]relativenumber');
-
-      case 'help':
-        this.cm.openDialog(
-          '<div style="white-space:pre;max-height:50vh;overflow:auto">'
-          + [
-            'Ex (compose):',
-            ':w              save draft',
-            ':x | :wq | :send   send',
-            ':q | :q!        close (warn) | close without saving',
-            ':to[:!]  addr   add/replace To',
-            ':cc[:!]  addr   add/replace Cc',
-            ':bcc[:!] addr   add/replace Bcc',
-            ':subj[:!] text  append/set subject',
-            ':e addr         set To = addr',
-            ':set html|plain',
-            ':set [no]number | [no]relativenumber',
-            '',
-            'Tips: ZZ send, ZQ cancel, <C-Enter> send'
-          ].join('\n')
-          + '</div><br><em>Esc to close</em>', null, { bottom: true }
-        );
-        break;
 
       default:
         return false;
