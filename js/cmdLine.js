@@ -149,6 +149,10 @@ class CMDLine {
       const arg = (m[2] || '').trim();
 
       switch (cmd) {
+				case 'iusevimbtw':
+				case 'iusevim':
+					this.showMessage('"Superior Developer" mode activated.');
+					return true;
         case 'q':
         case 'wq':
         case 'wq!':
@@ -178,9 +182,6 @@ class CMDLine {
           return true;
       }
     });
-
-    // TODO: remove
-    this._openHelp();
   }
 
   _feedKey(key) {
