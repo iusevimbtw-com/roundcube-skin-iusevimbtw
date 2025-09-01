@@ -94,9 +94,6 @@ class CMDLine {
         return true;
       }
 
-      // TODO: disable light theme
-      // TODO: make an easter egg for :iusevim command
-
       if (seq.endsWith('gg')) {
         e.preventDefault();
         this.helpContainer.scrollTop = 0;

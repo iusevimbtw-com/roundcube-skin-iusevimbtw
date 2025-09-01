@@ -1,16 +1,16 @@
-:root{--vim-bg:#faf8f5;--vim-panel:#f2efe9;--vim-panel-weak:#f6f3ee;--vim-text:#1f2328;--vim-muted:#5b6069;--vim-primary:#6b8cff;--vim-border:#e3dfd7;--vim-hover:#eae6de;--vim-star:#b7791f;}
+:root{--vim-bg:#101112;--vim-panel:#101112;--vim-panel-weak:#191c1e;--vim-text:#e6e7e9;--vim-muted:#9aa0a6;--vim-primary:#7aa2f7;--vim-border:#2a2e32;--vim-hover:#1e2123;--vim-star:#d9ae52;--vim-cian:#52caf0}
 html,body{background:var(--vim-bg);color:var(--vim-text)}#layout,#layout>.content,.content{background:var(--vim-bg)!important}
 #layout-menu,#layout-list,#layout-sidebar,#layout-content,.toolbar,.menu{background:var(--vim-panel)}
 .sidebar,.boxfooter,.boxtitle,.toolbar,.searchbar,.contentbox{border-color:var(--vim-border)!important}
-.toolbar a.button{border-radius:.5rem;border:1px solid var(--vim-border);background:var(--vim-panel-weak)}
+.toolbar a.button{border-radius:.5rem;border:1px solid var(--vim-border);background:var(--vim-panel-weak);color:var(--vim-text)}
 .toolbar a.button:hover{background:var(--vim-hover)}
-#folderlist li.selected>a,#mailboxlist li.selected>a{background:color-mix(in srgb,var(--vim-primary) 12%,white);border-radius:.4rem}
+#folderlist li.selected>a,#mailboxlist li.selected>a{background:color-mix(in srgb,var(--vim-primary) 15%,transparent);border-radius:.4rem}
 #folderlist a:hover,#mailboxlist a:hover{background:var(--vim-hover);border-radius:.4rem}
-#messagelist tbody tr{height:2.25rem}#messagelist tbody tr.unread>td{font-weight:600}
+#messagelist tbody tr{height:2.25rem}#messagelist tbody tr.unread>td{font-weight:700}
 #messagelist tbody tr:hover>td{background:var(--vim-hover)!important}
 .flag .flagged,.col-flag .flagged{color:var(--vim-star)}
-.vimkeys-statusline{border:1px solid var(--vim-border);background:var(--vim-panel-weak);color:var(--vim-muted)}
-.vimkeys-cmdline{border:1px solid var(--vim-border)}
+.vimkeys-statusline{color:#e6e7e9;background:var(--vim-panel-weak);border:1px solid var(--vim-border)}
+.vimkeys-cmdline{border:1px solid var(--vim-border);background:#0b1020;color:#e5e7e9}
 
 /* Compose CodeMirror full-height like Elastic's textarea */
 .rcmcompose #composebody.cm-enabled { display: none; }

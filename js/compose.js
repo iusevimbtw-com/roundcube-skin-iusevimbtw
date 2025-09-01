@@ -201,8 +201,6 @@ class VimCommandsComposeView {
     var cmd = m[1].toLowerCase();
     var arg = (m[2] || '').trim();
 
-    // TODO: global help command
-
     switch (cmd) {
       case 'w':
       case 'draft':
