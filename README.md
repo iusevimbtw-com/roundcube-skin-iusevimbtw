@@ -1,7 +1,5 @@
 # iusevimbtw skin for Roundcube Webmail
 
----
-
 *iusevimbtw* stands for **"I'm a better developer than you"**.  
 iusevimbtw webmail is powered by [Roundcube](https://roundcube.net) and the [Elastic skin](https://roundcube.net/screens/).  
 Heavily upgraded by [our team](https://team.iusevimbtw.com) to provide the keystrokes you all know.  
