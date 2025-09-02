@@ -2,7 +2,8 @@
   "name": "iusevimbtw",
   "extends": "elastic",
   "author": "iusevimbtw",
-  "license": "MIT",
+  "license": "Creative Commons Attribution-ShareAlike",
+  "license-url": "http://creativecommons.org/licenses/by-sa/3.0/",
   "version": "1.0.0",
   "localization": true
 }

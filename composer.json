@@ -1,7 +1,7 @@
 {
   "name": "iusevimbtw-com/roundcube-skin-iusevimbtw",
   "description": "The iusevimbtw theme for Roundcube Webmail",
-  "license": "MIT",
+  "license": "Creative Commons Attribution-ShareAlike",
   "type": "roundcube-skin",
   "require": {
     "roundcube/plugin-installer": ">=0.3.0"
